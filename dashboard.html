@@ -169,7 +169,11 @@ Bulanan
 
 <!-- TABLE -->
 
-<div class="bg-white rounded-2xl shadow mt-5 overflow-x-auto">
+<div class="bg-white rounded-2xl shadow mt-5">
+
+<!-- Desktop Table -->
+
+<div class="hidden md:block overflow-x-auto">
 
 <table class="w-full">
 
@@ -177,52 +181,30 @@ Bulanan
 
 <tr>
 
-<th class="p-4">
-
-Tanggal
-
-</th>
-
-<th>
-
-Kategori
-
-</th>
-
-<th>
-
-Jenis
-
-</th>
-
-<th>
-
-Nominal
-
-</th>
-
-<th>
-
-Keterangan
-
-</th>
-
-<th>
-
-Aksi
-
-</th>
+<th class="p-4">Tanggal</th>
+<th>Kategori</th>
+<th>Jenis</th>
+<th>Nominal</th>
+<th>Keterangan</th>
+<th>Aksi</th>
 
 </tr>
 
 </thead>
 
-<tbody
-id="tbody">
-
-</tbody>
+<tbody id="tbody"></tbody>
 
 </table>
+
+</div>
+
+<!-- Mobile Card -->
+
+<div
+id="mobileTransactions"
+class="md:hidden p-3 space-y-3">
+
+</div>
 
 </div>
 
