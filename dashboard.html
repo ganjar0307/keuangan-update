@@ -70,7 +70,7 @@ class="w-full text-left p-3 rounded-xl hover:bg-red-700">
 
 <!-- MAIN -->
 
-<main class="flex-1 p-6">
+<main class="flex-1 p-6 pb-24 md:pb-6">
 
 <div class="bg-white p-5 rounded-2xl shadow">
 
@@ -211,18 +211,19 @@ class="md:hidden p-3 space-y-3">
 
 <!-- PAGINATION -->
 
-<div class="mt-5 flex justify-center items-center gap-3">
+<div class="mt-5 mb-20 md:mb-5 flex justify-center items-center gap-3 flex-wrap">
 
 <button
 onclick="prevPage()"
-class="bg-slate-300 px-4 py-2 rounded">
+class="bg-slate-300 px-4 py-2 rounded-lg">
 
-◀
+◀ Sebelumnya
 
 </button>
 
 <span
-id="pageNumber">
+id="pageNumber"
+class="font-semibold">
 
 1
 
@@ -230,9 +231,9 @@ id="pageNumber">
 
 <button
 onclick="nextPage()"
-class="bg-slate-300 px-4 py-2 rounded">
+class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
 
-▶
+Berikutnya ▶
 
 </button>
 
