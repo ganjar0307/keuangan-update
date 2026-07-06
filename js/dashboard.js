@@ -5,7 +5,7 @@ Utils.getUser();
 
 if(!user){
 
-window.location="index.html";
+window.location="login.html";
 
 }
 
@@ -107,6 +107,13 @@ result.limit
 )
 );
 
+const mobileContainer=
+document.getElementById(
+"mobileTransactions"
+);
+
+mobileContainer.innerHTML="";
+
 tbody.innerHTML="";
 
 if(result.data.length===0){
@@ -133,6 +140,8 @@ return;
 
 result.data.forEach(item=>{
 
+// Desktop table
+
 tbody.innerHTML +=`
 
 <tr class="border-b">
@@ -155,7 +164,7 @@ ${item[3]}
 
 </td>
 
-<td>
+<td class="font-semibold">
 
 ${Utils.formatRupiah(item[5])}
 
@@ -195,6 +204,72 @@ class="bg-red-600 text-white px-2 py-1 rounded">
 </td>
 
 </tr>
+
+`;
+
+// Mobile card
+
+mobileContainer.innerHTML +=`
+
+<div class="border rounded-xl p-4 shadow-sm">
+
+<div class="text-sm text-gray-500">
+
+${Utils.formatTanggal(item[2])}
+
+</div>
+
+<div class="font-semibold mt-2">
+
+${item[4]}
+
+<span class="text-sm text-gray-500">
+
+• ${item[3]}
+
+</span>
+
+</div>
+
+<div class="text-lg font-bold mt-2">
+
+${Utils.formatRupiah(item[5])}
+
+</div>
+
+<div class="text-sm text-gray-600 mt-1">
+
+${item[6]}
+</div>
+
+<div class="flex gap-2 mt-4">
+
+<button
+onclick='editTransaction(
+"${item[0]}",
+"${item[2]}",
+"${item[3]}",
+"${item[4]}",
+"${item[5]}",
+"${item[6]}"
+)'
+class="flex-1 bg-yellow-500 text-white py-2 rounded-lg">
+
+✏️ Edit
+
+</button>
+
+<button
+onclick='deleteTransaction("${item[0]}")'
+class="flex-1 bg-red-600 text-white py-2 rounded-lg">
+
+🗑️ Hapus
+
+</button>
+
+</div>
+
+</div>
 
 `;
 
@@ -303,7 +378,7 @@ editID.value="";
 
 closeModal();
 
-loadTransactions();
+await loadTransactions();
 
 }catch(error){
 
