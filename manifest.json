@@ -1,0 +1,22 @@
+{
+"name":"Family Finance",
+"short_name":"Finance",
+"description":"Pencatatan Keuangan Rumah Tangga",
+"start_url":"./login.html",
+"display":"standalone",
+"background_color":"#ffffff",
+"theme_color":"#312E81",
+"orientation":"portrait",
+"icons":[
+{
+"src":"assets/icon-192.png",
+"sizes":"192x192",
+"type":"image/png"
+},
+{
+"src":"assets/icon-512.png",
+"sizes":"512x512",
+"type":"image/png"
+}
+]
+}
